@@ -4,13 +4,13 @@
 
 var express = require("express");
 
-module.exports = (function () {
+module.exports = {
 
-    function Assembler() {
+    assembleApp: function() {
+
         var webServer = require("../OreStar.WebServer");
         webServer.initialize(express);
+
     }
 
-    return Assembler;
-
-})();
+};

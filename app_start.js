@@ -4,4 +4,4 @@
 
 const assembler = require("./OreStar.Assembler");
 
-assembler();
+assembler.assembleApp();
