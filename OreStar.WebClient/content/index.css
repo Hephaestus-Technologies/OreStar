@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+#main-header {
+    min-height: 75px;
+    height: 5%;
+    background-color: beige;
+}
+
+#logo {
+    display: inline-block;
+}
+
+#logo > img {
+    height: 90%;
+    margin: 4%;
+}
+
+#menu-bar {
+    float: right;
+    margin-right: 5%;
+}
+
+#menu-bar button {
+    padding: 5px;
+    height: 100%;
+    min-width: 150px;
+    border: hidden;
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
+    font-size: x-large;
+}
+
+#menu-bar button:hover {
+    border-bottom: solid;
+    border-color: aqua;
+}

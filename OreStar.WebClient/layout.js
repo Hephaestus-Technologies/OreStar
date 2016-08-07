@@ -6,8 +6,8 @@ module.exports = (function () {
 
     function Layout() {}
 
-    Layout.prototype.showLoginBar = function (loginBar) {
-        this._loginBar = loginBar.render();
+    Layout.prototype.showMenuBar = function (menuBar) {
+        this._menuBar = menuBar.render();
     };
 
     Layout.prototype.showContent = function (contentView) {
@@ -20,13 +20,20 @@ module.exports = (function () {
 
     var _template = function () {
       return "" +
-          "<html>" +
-          "<body>" +
-              this._loginBar +
-              "" +
-              this._content +
-          "</body>" +
-          "</html>";
+        "<html>" +
+            "<head>" +
+                "<link rel='stylesheet' type='text/css' href='./index.css'/>" +
+            "</head>" +
+            "<body>" +
+                "<div id='main-header'>" +
+                    "<span id='logo'><img src='./MiningLogo.jpg'></span>" +
+                    "<span id='menu-bar'>" +
+                        this._menuBar +
+                    "</span>" +
+                "</div>" +
+                this._content +
+            "</body>" +
+        "</html>";
     };
 
     return Layout;

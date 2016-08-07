@@ -10,9 +10,9 @@ module.exports = (function () {
 
     function ClientController() {}
 
-    ClientController.prototype.getIndexPage = function (session) {
+    ClientController.prototype.getIndexPage = function () {
         var layout = new Layout();
-        layout.showLoginBar(new LoginBar());
+        layout.showMenuBar(new LoginBar());
         layout.showContent(new IndexView());
         return layout.render();
     };

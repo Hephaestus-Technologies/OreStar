@@ -11,7 +11,10 @@ module.exports = (function () {
     };
 
     var _template = function () {
-        return "";
+        return "" +
+            "<div>" +
+                "<a href='/login'><button>Login</button></a>" +
+            "</div>";
     };
 
     return LoginBar;

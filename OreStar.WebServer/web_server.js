@@ -21,6 +21,7 @@ module.exports = (function () {
 
     WebServer.prototype.registerClient = function (client) {
         var routeTable = clientRouteTable.create(client.getController());
+        this._expressApp.use(this._express.static(client.getContentDirectory()));
         _registerRoutingTable.call(this, routeTable);
     };
 
