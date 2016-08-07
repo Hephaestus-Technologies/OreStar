@@ -5,8 +5,9 @@
 const WebServer = require("./web_server");
 
 module.exports = {
-    initialize: function (express) {
-        var webServer = new WebServer(express);
+    initialize: function (express, session, webClient) {
+        var webServer = new WebServer(express, session);
+        webServer.registerClient(webClient);
         webServer.startListening();
     }
 };

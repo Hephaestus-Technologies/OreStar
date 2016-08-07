@@ -23,11 +23,17 @@ module.exports = (function () {
     };
 
     var _registerGet = function (route) {
-        this._router.get('/' + route.uri, route.callback);
+        this._router.get('/' + route.uri, createRequestHandler(route.callback));
     };
 
     var _registerPost = function (route) {
-        this._router.post('/' + route.uri, route.callback);
+        this._router.post('/' + route.uri, createRequestHandler(route.callback));
+    };
+
+    var createRequestHandler = function (callback) {
+        return function (request, response) {
+            response.send(callback(request.session, request.body));
+        }
     };
 
     Router.prototype.getExpressRouter = function () {

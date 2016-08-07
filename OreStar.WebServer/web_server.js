@@ -8,10 +8,21 @@ const clientRouteTable = require("./client_route_table");
 
 module.exports = (function () {
 
-    function WebServer(express) {
+    function WebServer(express, session) {
         this._express = express;
         this._expressApp = express();
+        var sessionConfiguration = session({
+            saveUninitialized: false,
+            resave: false,
+            secret: "this is some random string of characters"
+        });
+        this._expressApp.use(sessionConfiguration);
     }
+
+    WebServer.prototype.registerClient = function (client) {
+        var routeTable = clientRouteTable.create(client.getController());
+        _registerRoutingTable.call(this, routeTable);
+    };
 
     var _registerRoutingTable = function (routeTable) {
         var router = new Router(this._express);
