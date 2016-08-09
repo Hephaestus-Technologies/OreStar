@@ -5,6 +5,7 @@
 const Layout = require("./layout");
 const IndexView = require("./index_view");
 const LoginBar = require("./login_bar");
+const Footer = require("./footer");
 
 module.exports = (function () {
 
@@ -14,6 +15,7 @@ module.exports = (function () {
         var layout = new Layout();
         layout.showMenuBar(new LoginBar());
         layout.showContent(new IndexView());
+        layout.showFooter(new Footer());
         return layout.render();
     };
 

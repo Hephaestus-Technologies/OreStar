@@ -11,7 +11,7 @@ module.exports = (function () {
     };
 
     const _template = function () {
-        return "This is some sample html!";
+        return "";
     };
 
     return IndexView;

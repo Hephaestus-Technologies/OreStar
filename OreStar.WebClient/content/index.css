@@ -9,6 +9,7 @@ body {
 }
 
 #logo {
+    margin-left: 6%;
     display: inline-block;
 }
 
@@ -36,4 +37,120 @@ body {
 #menu-bar button:hover {
     border-bottom: solid;
     border-color: aqua;
+}
+
+#main-content {
+
+}
+
+#main-footer {
+    position: fixed;
+    bottom: 0;
+    min-height: 50px;
+    height: 4%;
+    background-color: beige;
+    width: 100%;
+}
+
+#company-link {
+    float: left;
+    cursor: pointer;
+    margin-left: 6%;
+    width: 24%;
+}
+
+#follow-us {
+    float: left;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 20%;
+    text-align: center;
+}
+
+#follow-us, #company-link {
+    height: 100%;
+}
+
+#follow-us > span, #company-link > span {
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+}
+
+#follow-us img, #company-link img {
+    height: 100%;
+}
+
+#about {
+    float: left;
+    margin-right: 6%;
+    width: 24%;
+    text-align: right;
+}
+
+#about button {
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100%;
+    border: hidden;
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
+}
+
+#main-footer {
+    position: fixed;
+    bottom: 0;
+    min-height: 50px;
+    height: 4%;
+    background-color: beige;
+    width: 100%;
+}
+
+#company-link {
+    float: left;
+    cursor: pointer;
+    margin-left: 6%;
+    width: 24%;
+}
+
+#follow-us {
+    float: left;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 20%;
+    text-align: center;
+}
+
+#follow-us, #company-link {
+    height: 100%;
+}
+
+#follow-us > span, #company-link > span {
+    position: absolute;
+    top: 20%;
+    bottom: 20%;
+}
+
+#follow-us img, #company-link img {
+    height: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#about {
+    float: left;
+    margin-right: 6%;
+    width: 24%;
+    text-align: right;
+}
+
+#about button {
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 100%;
+    border: hidden;
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
 }
