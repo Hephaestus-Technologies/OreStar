@@ -54,7 +54,7 @@ module.exports = (function () {
     var _renderAbout = function () {
         return "" +
             "<span id='about'>"                                                                                        +
-                "<a href='https://orestar.org/about' target='_blank'>"                                                 +
+                "<a href='https://orestar.org/#about' target='_blank'>"                                                 +
                     "<button>About</button>"                                                                           +
                 "</a>"                                                                                                 +
             "</span>";

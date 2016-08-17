@@ -8,31 +8,31 @@ const clientRouteTable = require("./client_route_table");
 
 module.exports = (function () {
 
-    function WebServer(express, session) {
-        this._express = express;
-        this._expressApp = express();
+    function WebServer(baseServer, session) {
+        this._baseServer = baseServer;
+        this._serverApp = baseServer();
         var sessionConfiguration = session({
             saveUninitialized: false,
             resave: false,
             secret: "this is some random string of characters"
         });
-        this._expressApp.use(sessionConfiguration);
+        this._serverApp.use(sessionConfiguration);
     }
 
     WebServer.prototype.registerClient = function (client) {
         var routeTable = clientRouteTable.create(client.getController());
-        this._expressApp.use(this._express.static(client.getContentDirectory()));
+        this._serverApp.use(this._baseServer.static(client.getContentDirectory()));
         _registerRoutingTable.call(this, routeTable);
     };
 
     var _registerRoutingTable = function (routeTable) {
-        var router = new Router(this._express);
+        var router = new Router(this._baseServer);
         router.registerRoutes(routeTable.routes);
-        this._expressApp.use(routeTable.routePrefix, router.getExpressRouter());
+        this._serverApp.use(routeTable.routePrefix, router.getExpressRouter());
     };
 
     WebServer.prototype.startListening = function () {
-        this._expressApp.listen(PORT, function () {
+        this._serverApp.listen(PORT, function () {
             console.log("Listening on port " + PORT);
         });
     };

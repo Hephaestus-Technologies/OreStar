@@ -13,7 +13,7 @@ module.exports = (function () {
     var _template = function () {
         return "" +
             "<div>" +
-                "<a href='/login'><button>Login</button></a>" +
+                "<a href='/#login'><button>Login</button></a>" +
             "</div>";
     };
 

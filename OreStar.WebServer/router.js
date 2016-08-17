@@ -6,8 +6,8 @@ const Verbs = require("./verbs.json");
 
 module.exports = (function () {
 
-    function Router(express) {
-        this._router = express.Router();
+    function Router(server) {
+        this._router = server.Router();
     }
 
     Router.prototype.registerRoutes = function (routes) {

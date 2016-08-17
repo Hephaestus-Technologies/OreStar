@@ -24,24 +24,53 @@ module.exports = (function () {
 
     var _template = function () {
       return "" +
-        "<html>"                                                                            +
-            "<title>Ore Star - Eve Online Mining Companion</title>"                         +
-            "<head>"                                                                        +
-                "<link rel='stylesheet' href='./index.css'/>"                               +
-            "</head>"                                                                       +
-            "<body>"                                                                        +
-                "<div id='main-header'>"                                                    +
-                    "<span id='logo'><img src='./MiningLogo.jpg'></span>"                   +
-                    "<span id='menu-bar'>"                                                  +
-                        this._menuBar                                                       +
-                    "</span>"                                                               +
-                "</div>"                                                                    +
-                this._content                                                               +
-                "<div id='main-footer'>"                                                    +
-                    this._footer                                                            +
-                "</div>"                                                                    +
-            "</body>"                                                                       +
+          "<html>"                                                                                                     +
+          _renderHead()                                                                                                +
+          _renderBody.call(this)                                                                                       +
         "</html>";
+    };
+
+    var _renderHead = function () {
+        return "" +
+            "<head>"                                                                                                   +
+                "<title>Ore Star - Eve Online Mining Companion</title>"                                                +
+                "<link rel='stylesheet' href='./index.css'/>"                                                          +
+                "<script"                                                                                              +
+                "src='ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'>"                                      +
+                "</script>"                                                                                            +
+            "</head>";
+    };
+
+    var _renderBody = function () {
+        return "" +
+            "<body>"                                                                                                   +
+                _renderHeader.call(this)                                                                               +
+                _renderContent.call(this)                                                                              +
+                _renderFooter.call(this)                                                                               +
+            "</body>";
+    };
+
+    var _renderHeader = function () {
+        return "" +
+            "<div id='main-header'>"                                                                                   +
+                "<span id='logo'><img src='./MiningLogo.jpg'></span>"                                                  +
+                "<span id='menu-bar'>"                                                                                 +
+                    this._menuBar                                                                                      +
+                "</span>"                                                                                              +
+            "</div>";
+    };
+
+    var _renderContent = function () {
+        return "" +
+            "<div id='main-content'>"                                                                                  +
+                this._content                                                                                          +
+            "</div>";
+    };
+
+    var _renderFooter = function () {
+        return "<div id='main-footer'>"                                                                                +
+            this._footer                                                                                               +
+            "</div>";
     };
 
     return Layout;

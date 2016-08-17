@@ -10,11 +10,15 @@ module.exports = {
 
     assembleApp: function() {
 
-        var client = require("../OreStar.WebClient");
-        client.initialize(path);
+        var webClient = require("../OreStar.WebClient");
+        webClient.initialize(path);
 
         var webServer = require("../OreStar.WebServer");
-        webServer.initialize(express, session, client);
+        webServer
+            .withBaseServer(express)
+            .withSessionManager(session)
+            .withClient(webClient)
+            .initialize();
 
     }
 
